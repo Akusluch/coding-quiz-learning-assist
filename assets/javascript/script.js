@@ -471,6 +471,7 @@ function countdown() {
       } else {
         clearInterval(timeInterval);
         timer.textContent = "Timer"; 
+        endgame();
       }
       
     }, 1000);
