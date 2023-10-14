@@ -3,17 +3,19 @@ var code = document.querySelector("#code");
 var question = document.querySelector("#question");
 var answerbank = document.querySelector("#bank")
 var timer = document.querySelector("#timer")
-
+var timeLeft = 75;
+var answer = document.createElement("div");
+var a1 = document.createElement("button");
+var a2 = document.createElement("button");
+var a3 = document.createElement("button");
+var a4 = document.createElement("button");
+var as = [a1, a2, a3, a4]
+var colors = ["red", "light blue", "green","yellow"]
 
 
 function quiz() {
     countdown();
-
-    var answer = document.createElement("ul");
-    var a1 = document.createElement("li");
-    var a2 = document.createElement("li");
-    var a3 = document.createElement("li");
-    var a4 = document.createElement("li");
+    var options = ["Boolean", "Strings", "Alerts", "Numbers"]
     
     code.textContent = "";
     question.textContent = "Commonly used data types Do NOT include _____?";
@@ -21,71 +23,38 @@ function quiz() {
 
     answerbank.appendChild(answer);
 
-    a1.textContent = "Boolean";
-    a1.style.padding = '10px';
-    a1.setAttribute("data-state", "wrong")
-    answer.appendChild(a1);
-    a1.addEventListener("click", function(event) {
-        event.preventDefault();
-        var state = element.getAttribute("data-state")
+    for (i=0; i < as.length; i++){
+        as[i].textContent = options.shift();
+        as[i].setAttribute("style", "padding: 10px; display: flex; flex-direction: column;")
+        as[i].style.backgroundColor = colors.shift();
+        answer.appendChild(as[i]);
 
-        if (state === "correct") {
-            //next quetion
-        } else {
-            timeLeft = timeLeft - 10;
-        }
-    })
+        as[0].setAttribute("data-state", "wrong");
+        as[1].setAttribute("data-state", "wrong");
+        as[2].setAttribute("data-state", "correct");
+        as[3].setAttribute("data-state", "wrong")
 
-    a2.textContent = "Strings";
-    a2.style.padding = '10px';
-    a2.setAttribute("data-state", "wrong")
-    answer.appendChild(a2);
-    a2.addEventListener("click", function(event) {
-        event.preventDefault();
-        var state = element.getAttribute("data-state")
+        as[i].addEventListener("click", function(event) {
+            event.preventDefault(); 
+            var state = as[i].getAttribute("data-state");
 
-        if (state === "correct") {
-            //next quetion
-        } else {
-            timeLeft = timeLeft - 10;
-        }
-    })
+            if (state === "correct") {
+                //next quetion
+            } else {
+                timeLeft = timeLeft - 10;
+                //next quetion
+            }
+        })
+        
+    }
 
-    a3.textContent = "Alerts";
-    a3.style.padding = '10px';
-    a3.setAttribute("data-state", "correct")
-    answer.appendChild(a3);
-    a3.addEventListener("click", function(event) {
-        event.preventDefault();
-        var state = element.getAttribute("data-state")
-
-        if (state === "correct") {
-            //next quetion
-        } else {
-            timeLeft = timeLeft - 10;
-        }
-    })
-
-    a4.textContent = "Numbers";
-    a4.style.padding = '10px';
-    a4.setAttribute("data-state", "wrong")
-    answer.appendChild(a4);
-    a4.addEventListener("click", function(event) {
-        event.preventDefault();
-        var state = element.getAttribute("data-state")
-
-        if (state === "correct") {
-            //next quetion
-        } else {
-            timeLeft = timeLeft - 10;
-        }
-    })
+    
 }
 
 quizstart.addEventListener("click", quiz)
 
 function countdown() {
-    var timeLeft = 75;
+    // var timeLeft = 75;
   
     var timeInterval = setInterval(function () {
   
