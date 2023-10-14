@@ -1,0 +1,25 @@
+body {
+    /* text-align: center; */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container {
+    border: 2px solid black;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#highscore {
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: underline;
+}
+
+#timer {
+    font-size: 18px;
+    padding: 10px;
+}
