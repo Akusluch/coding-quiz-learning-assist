@@ -3,7 +3,7 @@ var code = document.querySelector("#code");
 var question = document.querySelector("#question");
 var answerbank = document.querySelector("#bank")
 var timer = document.querySelector("#timer")
-var timeLeft = 75;
+var timeLeft = 100;
 var answer = document.createElement("div");
 var a1 = document.createElement("button");
 var a2 = document.createElement("button");
@@ -113,14 +113,14 @@ function quiz1() {
 
     for (i=0; i < as.length; i++){
         as[i].textContent = options.shift();
-        as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
-        as[i].style.backgroundColor = "yellow";
-        answer.appendChild(as[i]);
+        // as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
+        // as[i].style.backgroundColor = "yellow";
+        // answer.appendChild(as[i]);
 
-        as[0].setAttribute("data-state", "wrong");
-        as[1].setAttribute("data-state", "wrong");
-        as[2].setAttribute("data-state", "correct");
-        as[3].setAttribute("data-state", "wrong")
+        // as[0].setAttribute("data-state", "wrong");
+        // as[1].setAttribute("data-state", "wrong");
+        // as[2].setAttribute("data-state", "correct");
+        // as[3].setAttribute("data-state", "wrong")
         
     }
 
@@ -196,12 +196,12 @@ function quiz2() {
 
     for (i=0; i < as.length; i++){
         as[i].textContent = options.shift();
-        as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
-        as[i].style.backgroundColor = "yellow";
-        answer.appendChild(as[i]);
+        // as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
+        // as[i].style.backgroundColor = "yellow";
+        // answer.appendChild(as[i]);
 
-        as[0].setAttribute("data-state", "wrong");
-        as[1].setAttribute("data-state", "wrong");
+        // as[0].setAttribute("data-state", "wrong");
+        // as[1].setAttribute("data-state", "wrong");
         as[2].setAttribute("data-state", "wrong");
         as[3].setAttribute("data-state", "correct")
         
@@ -279,12 +279,12 @@ function quiz3() {
 
     for (i=0; i < as.length; i++){
         as[i].textContent = options.shift();
-        as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
-        as[i].style.backgroundColor = "yellow";
-        answer.appendChild(as[i]);
+        // as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
+        // as[i].style.backgroundColor = "yellow";
+        // answer.appendChild(as[i]);
 
-        as[0].setAttribute("data-state", "wrong");
-        as[1].setAttribute("data-state", "wrong");
+        // as[0].setAttribute("data-state", "wrong");
+        // as[1].setAttribute("data-state", "wrong");
         as[2].setAttribute("data-state", "correct");
         as[3].setAttribute("data-state", "wrong")
         
@@ -356,18 +356,17 @@ function quiz4() {
     question.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
     question.style.padding = '10px';
     answer.style.textAlign = 'center';
-    
 
     answerbank.appendChild(answer);
 
     for (i=0; i < as.length; i++){
         as[i].textContent = options.shift();
-        as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
-        as[i].style.backgroundColor = "yellow";
-        answer.appendChild(as[i]);
+        // as[i].setAttribute("style", "padding: 10px; margin: 10px; display: flex; flex-direction: column;")
+        // as[i].style.backgroundColor = "yellow";
+        // answer.appendChild(as[i]);
 
-        as[0].setAttribute("data-state", "wrong");
-        as[1].setAttribute("data-state", "wrong");
+        // as[0].setAttribute("data-state", "wrong");
+        // as[1].setAttribute("data-state", "wrong");
         as[2].setAttribute("data-state", "correct");
         as[3].setAttribute("data-state", "wrong")
         
@@ -441,8 +440,6 @@ function endgame() {
     sub.addEventListener("click", highscore);
     answer.appendChild(sub);
 
-    
-
     a1.remove();
     a2.remove();
     a3.remove();
@@ -450,9 +447,6 @@ function endgame() {
 
     answer.appendChild(initals);
     initals.setAttribute("placeholder", "enter intials here");
-
-    // localStorage.setItem("score", timeLeft);
-    // localStorage.setItem("user", initals.value)
 }
 
 function highscore(){
@@ -461,7 +455,7 @@ function highscore(){
     localStorage.setItem("score", timeLeft);
     localStorage.setItem("user", initals.value)
 
-    question.textContent = localStorage.getItem("user") + localStorage.getItem("score");
+    question.textContent = localStorage.getItem("user") + "-" + localStorage.getItem("score");
 }
 
 function countdown() {
