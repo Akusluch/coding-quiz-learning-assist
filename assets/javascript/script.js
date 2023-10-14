@@ -14,12 +14,15 @@ var colors = ["red", "light blue", "green","yellow"]
 
 
 function quiz() {
+    quizstart.textContent = "";
     countdown();
     var options = ["Boolean", "Strings", "Alerts", "Numbers"]
     
     code.textContent = "";
     question.textContent = "Commonly used data types Do NOT include _____?";
     question.style.padding = '10px';
+    answer.style.textAlign = 'center';
+    
 
     answerbank.appendChild(answer);
 
@@ -33,25 +36,61 @@ function quiz() {
         as[1].setAttribute("data-state", "wrong");
         as[2].setAttribute("data-state", "correct");
         as[3].setAttribute("data-state", "wrong")
-
-        as[i].addEventListener("click", function(event) {
-            event.preventDefault(); 
-            var state = as[i].getAttribute("data-state");
-
-            if (state === "correct") {
-                //next quetion
-            } else {
-                timeLeft = timeLeft - 10;
-                //next quetion
-            }
-        })
         
     }
 
-    
 }
 
 quizstart.addEventListener("click", quiz)
+
+function check1() {
+    var check = a1.getAttribute("data-state");
+    
+    if (check === "correct") {
+        //next quetion
+    } else {
+        timeLeft = timeLeft - 10;
+        //next quetion
+    }
+}
+
+function check2() {
+    var check = a2.getAttribute("data-state");
+    
+    if (check === "correct") {
+        //next quetion
+    } else {
+        timeLeft = timeLeft - 10;
+        //next quetion
+    }
+}
+
+function check3() {
+    var check = a3.getAttribute("data-state");
+    
+    if (check === "correct") {
+        //next quetion
+    } else {
+        timeLeft = timeLeft - 10;
+        //next quetion
+    }
+}
+
+function check4() {
+    var check = a4.getAttribute("data-state");
+    
+    if (check === "correct") {
+        //next quetion
+    } else {
+        timeLeft = timeLeft - 10;
+        //next quetion
+    }
+}
+
+a1.addEventListener("click", check1);
+a2.addEventListener("click", check2);
+a3.addEventListener("click", check3);
+a4.addEventListener("click", check4);
 
 function countdown() {
     // var timeLeft = 75;
