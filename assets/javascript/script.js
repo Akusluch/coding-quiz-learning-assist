@@ -283,8 +283,8 @@ function quiz3() {
         // as[i].style.backgroundColor = "yellow";
         // answer.appendChild(as[i]);
 
-        // as[0].setAttribute("data-state", "wrong");
-        // as[1].setAttribute("data-state", "wrong");
+        as[0].setAttribute("data-state", "wrong");
+        as[1].setAttribute("data-state", "wrong");
         as[2].setAttribute("data-state", "correct");
         as[3].setAttribute("data-state", "wrong")
         
@@ -365,8 +365,8 @@ function quiz4() {
         // as[i].style.backgroundColor = "yellow";
         // answer.appendChild(as[i]);
 
-        // as[0].setAttribute("data-state", "wrong");
-        // as[1].setAttribute("data-state", "wrong");
+        as[0].setAttribute("data-state", "wrong");
+        as[1].setAttribute("data-state", "wrong");
         as[2].setAttribute("data-state", "correct");
         as[3].setAttribute("data-state", "wrong")
         
